@@ -67,8 +67,8 @@ module.exports = {
     },
     remove:(req, res)=> {
       return new Promise((resolve, reject)=> {
-        const {id} = req.params
-        db.query(`DELETE FROM movies where id=${id}`,(err, results)=> {
+        const {id_movies} = req.params
+        db.query(`DELETE FROM movies where id_movies=${id_movies}`,(err, results)=> {
           if(err) {reject({message: "ada error"})}
           resolve.send({
             message: "delete movies success",
